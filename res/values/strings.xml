@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Quadrotor</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_home">Quadrotor</string>
+    <string name="button_name">Start Discovery</string>
+    <string name="Hint">Chat Input</string>
+    <string name="title_activity_chat_window">ChatWindow</string>
+    <string name="send_button">SEND</string>
+
+</resources>
