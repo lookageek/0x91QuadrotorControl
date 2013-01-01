@@ -45,18 +45,18 @@ public class QuadrotorHome extends Activity implements OnClickListener, DialogIn
     //JAY: try doing asynctask for the lines on btInter and deviceList if performance is slow pg 67 android book
     public void onClick(View v)
     {
-    	devarraylist = new ArrayList<String>();
-    	for(String s : devicelist)
-    		devarraylist.add(s);
-    	arrayadap = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,devarraylist);
+    	//devarraylist = new ArrayList<String>();
+    	//for(String s : devicelist)
+    		//devarraylist.add(s);
+    	arrayadap = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,devicelist);
     	devlv.setAdapter(arrayadap);
     	devlv.setClickable(true);
-    	devlv.setOnItemClickListener(new OnItemClickListener(){
-    		 public void onItemClick(AdapterView<?> myAdapter, View myView, int myItemInt, long mylng) {
+    	devlv.setOnItemClickListener(new OnItemClickListener(){ 
+    		public void onItemClick(AdapterView<?> myAdapter, View myView, int myItemInt, long mylng) {
     		         selectedFromList =(String) (devlv.getItemAtPosition(myItemInt));
     		         AlertDialog ad = new AlertDialog.Builder(cont).create();  
-    		         ad.setTitle("Confirm Pairing");
-    		         ad.setMessage("Pair with "+selectedFromList+" ?");  
+    		         ad.setTitle("Confirm Connecting");
+    		         ad.setMessage("Connect with "+selectedFromList+" ?");  
     		         ad.setButton("OK", new DialogInterface.OnClickListener() {
     		         public void onClick(DialogInterface dialog, int which) {  
     		             btInter.connect(selectedFromList);

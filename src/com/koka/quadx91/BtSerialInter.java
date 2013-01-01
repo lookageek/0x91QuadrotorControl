@@ -9,6 +9,8 @@ import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.content.Context;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 
 
@@ -68,12 +70,11 @@ public BtSerialInter(Context ctx) {
 	welcome();
 	mAdapter = BluetoothAdapter.getDefaultAdapter();
 	/* Init the adapter */
-	//new Handler(Looper.getMainLooper()).post(new Runnable() {
-		//@Override
-		//public void run() {
-			//mAdapter = BluetoothAdapter.getDefaultAdapter();
-		//}
-	//});
+	new Handler(Looper.getMainLooper()).post(new Runnable() {
+		public void run() {
+			mAdapter = BluetoothAdapter.getDefaultAdapter();
+		}
+	});
 }
 
 /**
